@@ -1,0 +1,12 @@
+---
+:id: 75320695
+:submitters:
+- :name: Quinn Aguiar
+  :email: paguiar01@uri.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2021-04-17 03:40:41.014622000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2021-04-16 20:40:41.014622000 Z
+:status: processed
+:score: 120.0

@@ -15,12 +15,13 @@ A popular application of (color) thresholding is recreating the effects from And
 ## Global Thresholding
 It’s important to note that pixel values for an image are stored in a matrix. Matrices don’t have to be perfect squares (i.e., 2x2, 3x3, 10x10), and while all most of our examples below are perfect squares, your program should work on images of any dimensions (perfect squares or not).
 
-> **Slow down, what’s a matrix?** You can visualize a matrix as a grid. 2D matrices (aka 2D arrays) are composed of some number of arrays inside another array. To access the element stored at row 2 column 3, you’d say ' myMatrix[2][3] '. Want more info on matrices before continuing? Check out this [Multidimensional Arrays Tutorial](https://www.learncpp.com/cpp-tutorial/multidimensional-arrays/).
+> **Slow down, what’s a matrix?** You can visualize a matrix as a grid. 2D matrices (aka 2D arrays) are composed of some number of arrays inside another array. To access the element stored at row 2 column 3, you’d say `myMatrix[2][3]`. Want more info on matrices before continuing? Check out this [Multidimensional Arrays Tutorial](https://www.learncpp.com/cpp-tutorial/multidimensional-arrays/).
 
-The process of image binarization can be done by comparing each pixel within the input image against a predefined threshold T, and deciding whether each individual pixel gets turned white or black. Pixels whose intensity is less than T become black, all others become white.
+The process of image binarization can be done by comparing each pixel within the input image against a predefined threshold `T`, and deciding whether each individual pixel gets turned white or black. Pixels whose intensity is less than `T` become black, all others become white.
 
 The algorithm below shows how to binarize an image.
 
+```
 input: Image A (grayscale)
 output: Image B (black and white)
 
@@ -32,7 +33,8 @@ for each pixel A[i][j] in A do
         B[i][j] = 255
     endif
 endfor
-The value of T can be automatically calculated by using a function. For example, T can be either 1) the average intensity or 2) the median of all pixels. There are hundreds of different ways for calculating T, often involving statistical measures.
+```
+The value of `T` can be automatically calculated by using a function. For example, T can be either 1) the average intensity or 2) the median of all pixels. There are hundreds of different ways for calculating T, often involving statistical measures.
 
 Local Thresholding
 While global thresholding uses a constant threshold T for transforming each pixel in an image, the idea behind local thresholding is to transform pixels by only considering the surrounding area, i.e., the local neighborhood of each pixel. The neighborhood of a pixel p is a small matrix of dimensions d x d centered at p. In this case, for each pixel in the image, we are basically calculating a different T. The algorithm below shows how to binarize an image using local thresholding.
